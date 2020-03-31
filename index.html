@@ -13,8 +13,9 @@
       // create Oscillator node
       var oscillator = audioCtx.createOscillator();
 
-      oscillator.type = 'square';
-      oscillator.frequency.value = 120;
+      //oscillator.type = 'square';
+      oscillator.type = 'saw';
+      oscillator.frequency.value = 220;
       oscillator.connect(audioCtx.destination);
 
       oscillator.start();
