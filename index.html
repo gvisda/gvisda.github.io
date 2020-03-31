@@ -6,23 +6,23 @@
   </head>
   <body>
     <script type = "text/javascript">
-    const start = () => {
+    //const start = () => {
       // create web audio api context
       var audioCtx = new (window.AudioContext || window.webkitAudioContext)(); 
 
       // create Oscillator node
       var oscillator = audioCtx.createOscillator();
 
-      //oscillator.type = 'sine';
-      //oscillator.frequency.value = 440;
+      oscillator.type = 'sine';
+      oscillator.frequency.value = 440;
       oscillator.connect(audioCtx.destination);
 
       oscillator.start();
 
-      oscillator.stop(audioCtx.currentTime + 2); // stop 2 seconds after the current time
-    };
+      //oscillator.stop(audioCtx.currentTime + 2); // stop 2 seconds after the current time
+    //};
 
-    document.body.addEventListener('click', start, {once: true});
+    //document.body.addEventListener('click', start, {once: true});
     </script>
   </body>
 </html>
