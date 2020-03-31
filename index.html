@@ -14,12 +14,12 @@
       var oscillator = audioCtx.createOscillator();
 
       oscillator.type = 'square';
-      oscillator.frequency.value = 440;
+      oscillator.frequency.value = 120;
       oscillator.connect(audioCtx.destination);
 
       oscillator.start();
 
-      oscillator.stop(audioCtx.currentTime + 2); // stop 2 seconds after the current time
+      oscillator.stop(audioCtx.currentTime + 4); // stop 4 seconds after the current time
     };
 
     document.body.addEventListener('click', start, {once: true});
