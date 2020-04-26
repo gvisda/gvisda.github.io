@@ -5,26 +5,6 @@
     </title>
   </head>
   <body>
-    <script type = "text/javascript">
-    const start = () => {
-      // create web audio api context
-      var audioCtx = new (window.AudioContext || window.webkitAudioContext)(); 
-
-      // create Oscillator node
-      var oscillator = audioCtx.createOscillator();
-
-      //oscillator.type = 'square';
-      oscillator.type = 'saw';
-      oscillator.frequency.value = 220;
-      gainNode.gain.value = 0.2;
-      oscillator.connect(audioCtx.destination);
-
-      oscillator.start();
-
-      oscillator.stop(audioCtx.currentTime + 4); // stop 4 seconds after the current time
-    };
-
-    document.body.addEventListener('click', start, {once: true});
-    </script>
+   This is a test
   </body>
 </html>
