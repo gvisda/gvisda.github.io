@@ -9,9 +9,11 @@
     const start = () => {
       // create web audio api context
       var audioCtx = new (window.AudioContext || window.webkitAudioContext)(); 
-
+    
       // create Oscillator node
       var oscillator = audioCtx.createOscillator();
+      // create time
+      var now = audioCtx.currentTime();
 
       //oscillator.type = 'square';
       oscillator.type = 'saw';
@@ -19,12 +21,13 @@
       //gainNode.gain.value = 0.2;
       oscillator.connect(audioCtx.destination);
 
-      oscillator.start();
+      oscillator.start(now + 1);
+      oscillator.stop(now + 4);
 
-      oscillator.stop(audioCtx.currentTime + 4); // stop 4 seconds after the current time
+      //oscillator.stop(audioCtx.currentTime + 4); // stop 4 seconds after the current time
     };
 
-    document.body.addEventListener('click', start, {once: true});
+    //document.body.addEventListener('click', start, {once: true});
     </script>
   </body>
 </html>
