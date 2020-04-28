@@ -9,23 +9,32 @@
     <script type = "text/javascript">
     //const start = () => {
       // create web audio api context
-      var audioCtx = new (window.AudioContext || window.webkitAudioContext)(); 
-    
+      //var audioCtx = new (window.AudioContext || window.webkitAudioContext)(); 
+      const context = new AudioContext;
+      const osc = new OscillatorNode(context);
+      const amp = new GainNode(context);
+      
+      osc.connect(amp);
+      amp.connect(context.destination);
+// or
+      //osc.connect(amp).connect(context.destination)
+      
+      amp.gain.value = 0.25;
+      osc.start(0.0);
+      osc.stop(2.0);
       // create Oscillator node
-      var oscillator = audioCtx.createOscillator();
+      //var oscillator = audioCtx.createOscillator();
       // create time
-      var now = audioCtx.currentTime();
+      //var now = audioCtx.currentTime();
 
       //oscillator.type = 'square';
-      oscillator.type = 'saw';
-      oscillator.frequency.value = 220;
-      oscillator.gain.value = 0.7;
-      oscillator.connect(audioCtx.destination);
+      //oscillator.type = 'saw';
+      //oscillator.frequency.value = 220;
+      //oscillator.gain.value = 0.7;
+      //oscillator.connect(audioCtx.destination);
  
-      oscillator.start();
-      setTimeout (function(){
-        oscillator.sto();
-      }, 2000);
+      
+      
       //oscillator.stop(now + 4);
 
      // oscillator.stop(audioCtx.currentTime + 4); // stop 4 seconds after the current time
