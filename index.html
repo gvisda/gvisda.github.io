@@ -18,7 +18,7 @@
       //oscillator.type = 'square';
       oscillator.type = 'saw';
       oscillator.frequency.value = 220;
-      //gainNode.gain.value = 0.2;
+      oscillator.gain.value = 0.7;
       oscillator.connect(audioCtx.destination);
 
       oscillator.start(now + 1);
