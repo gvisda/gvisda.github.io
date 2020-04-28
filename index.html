@@ -25,10 +25,10 @@
       //oscillator.start(now + 1);
       //oscillator.stop(now + 4);
 
-      //oscillator.stop(audioCtx.currentTime + 4); // stop 4 seconds after the current time
+      oscillator.stop(audioCtx.currentTime + 4); // stop 4 seconds after the current time
     };
 
-    //document.body.addEventListener('click', start, {once: true});
+    document.body.addEventListener('click', start, {once: true});
     </script>
   </body>
 </html>
