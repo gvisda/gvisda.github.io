@@ -1,12 +1,4 @@
-<html>
-  <head>
-    <title>
-      Web Audio Test
-    </title>
-  </head>
-  <body>
-    <script type = "text/javascript">
-    
+
       // create web audio api context
       var audioCtx = new AudioContext(); 
     
@@ -26,7 +18,3 @@
       oscillator.start(audioCtx.currentTime);
       //oscillator.stop(now + 4);
 
-     
-    </script>
-  </body>
-</html>
